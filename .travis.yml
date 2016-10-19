@@ -1,0 +1,16 @@
+language: python
+cache: pip
+
+# Use container-based infrastructure
+sudo: false
+
+# Package installation
+install:
+  - pip install tox coveralls
+
+# Run the tests
+script:
+  tox
+
+after_success:
+  coveralls
