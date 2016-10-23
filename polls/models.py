@@ -1,8 +1,9 @@
 from __future__ import unicode_literals
+import datetime
 
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
-
+from django.utils import timezone
 
 @python_2_unicode_compatible
 class Question(models.Model):
@@ -12,6 +13,9 @@ class Question(models.Model):
     def __str__(self):
         return self.question_text
 
+    def was_published_recently(self):
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
 @python_2_unicode_compatible
 class Choice(models.Model):

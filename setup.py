@@ -1,21 +1,11 @@
-#!/usr/bin/env python
+import os
+from setuptools import find_packages, setup
 
-import sys
+with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
+    README = readme.read()
 
-try:
-    from setuptools import setup, find_packages
-except ImportError:
-    from distutils.core import setup
-
-
-# Hack to prevent "TypeError: 'NoneType' object is not callable" error
-# in multiprocessing/util.py _exit_function when setup.py exits
-# (see http://www.eby-sarna.com/pipermail/peak/2010-May/003357.html)
-try:
-    import multiprocessing
-except ImportError:
-    pass
-
+# allow setup.py to be run from any path
+os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 install_requires = [
     "Django>=1.8.1,<1.11",
@@ -23,34 +13,32 @@ install_requires = [
     "Pillow>=2.6.1",
 ]
 
-# Testing dependencies
-testing_extras = [
-    # Required for running the tests
-    'mock>=1.0.0',
-    'python-dateutil>=2.2',
-    'pytz>=2014.7',
-    'Pillow>=2.7.0',
-    'Jinja2>=2.8,<3.0',
-    'boto3>=1.1,<1.2',
-
-    # For coverage and PEP8 linting
-    'coverage>=3.7.0',
-    'flake8>=2.2.0',
-    'isort>=4.2.0',
-]
-
 setup(
-    name='django-test',
-    version='0.0.1',
-    description='A Django content management system focused on flexibility and user experience',
-    author='Shinji Fujimoto',
+    name='django-polls',
+    version='0.0.3',
     packages=find_packages(),
+    author='Shinji Fujimoto',
     include_package_data=True,
-    license='MIT',
-    long_description=open('README.md').read(),
+    license='BSD License',  # example license
+    description='A simple Django app to conduct Web-based polls.',
+    long_description=README,
+    url='https://www.example.com/',
+    author='Your Name',
+    author_email='yourname@example.com',
     install_requires=install_requires,
-    extras_require={
-        'testing': testing_extras,
-    },
-    zip_safe=False,
+    classifiers=[
+        'Environment :: Web Environment',
+        'Framework :: Django',
+        'Framework :: Django :: X.Y',  # replace "X.Y" as appropriate
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: BSD License',  # example license
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
+        # Replace these appropriately if you are stuck on Python 2.
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Topic :: Internet :: WWW/HTTP',
+        'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
+    ],
 )
