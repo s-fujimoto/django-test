@@ -6,11 +6,11 @@ files:
 hooks:
   ApplicationStop:
     - location: scripts/application_stop.sh
-      timeout: 300
+      timeout: 10
       runas: root
 #  BeforeInstall:
 #    - location: scripts/before_install.sh
   ApplicationStart:
     - location: scripts/application_start.sh
-      timeout: 300
+      timeout: 10
       runas: root
