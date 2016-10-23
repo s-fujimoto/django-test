@@ -4,9 +4,11 @@ files:
   - source: project
     destination: /var/lib/project/project
   - source: polls
-    destination: /var/lib/project/polls
+    destination: /var/lib/project
   - source: templates
-    destination: /var/lib/project/templates
+    destination: /var/lib/project
+  - source: manage.py
+    destination: /var/lib/project
   - source: requirements.txt
     destination: /tmp
 permissions:
