@@ -1,0 +1,11 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/lib/project
+hooks:
+  AfterInstall:
+    - location: python setup.py
+  ApplicationStart:
+    - location: /var/lib/project/manage.py runserver 0.0.0.0:8000
+
