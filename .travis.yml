@@ -2,8 +2,8 @@ language: python
 cache: pip
 sudo: false
 install:
-- pip install tox coveralls
-script: tox
+  - pip install pytest pytest-cov pytest-pep8 pytest-django coveralls
+script: python manage.py test
 after_success: coveralls
 deploy:
   provider: codedeploy

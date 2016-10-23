@@ -1,9 +1,19 @@
 version: 0.0
 os: linux
 files:
-  - source: /
-    destination: /var/lib/project
+  - source: project
+    destination: /var/lib/project/project
+  - source: polls
+    destination: /var/lib/project/polls
+  - source: templates
+    destination: /var/lib/project/templates
+  - source: requirements.txt
+    destination: /tmp
 hooks:
+  AfterInstall:
+    - location: scripts/after_install.sh
+      timeout: 60
+      runas: root
   ApplicationStart:
     - location: scripts/application_start.sh
       timeout: 10
