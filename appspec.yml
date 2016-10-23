@@ -4,8 +4,8 @@ files:
   - source: /
     destination: /var/lib/project
 hooks:
-  BeforeInstall:
-    - location: scripts/before_install.sh
+#  BeforeInstall:
+#    - location: scripts/before_install.sh
   ApplicationStart:
     - location: scripts/application_start.sh
 
