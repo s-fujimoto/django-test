@@ -1,0 +1,9 @@
+#!/bin/bash
+
+yum install git -y
+pip install ansible
+git config --global credential.helper '!aws codecommit credential-helper $@'
+git config --global credential.UseHttpPath true
+git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/django-test-ansible
+cd django-test-ansible/
+ansible-playbook -i hosts django-test.yml
