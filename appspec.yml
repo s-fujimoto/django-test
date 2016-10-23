@@ -4,7 +4,7 @@ files:
   - source: /
     destination: /var/lib/project
 hooks:
-  ApplicationStop:
+#  ApplicationStop:
 #    - location: scripts/application_stop.sh
 #      timeout: 10
 #      runas: root
