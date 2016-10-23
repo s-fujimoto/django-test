@@ -9,6 +9,10 @@ files:
     destination: /var/lib/project/templates
   - source: requirements.txt
     destination: /tmp
+permissions:
+  - object: /var/lib/project
+    owner: apache
+    group: apache
 hooks:
   AfterInstall:
     - location: scripts/after_install.sh
