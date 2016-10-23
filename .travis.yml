@@ -2,7 +2,7 @@ language: python
 cache: pip
 sudo: false
 install:
-  - pip install pytest pytest-cov pytest-pep8 pytest-django coveralls
+  - pip install django pytest pytest-cov pytest-pep8 pytest-django coveralls
 script: python manage.py test
 after_success: coveralls
 deploy:
