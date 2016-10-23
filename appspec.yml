@@ -5,9 +5,9 @@ files:
     destination: /var/lib/project
 hooks:
   ApplicationStop:
-    - location: scripts/application_stop.sh
-      timeout: 10
-      runas: root
+#    - location: scripts/application_stop.sh
+#      timeout: 10
+#      runas: root
 #  BeforeInstall:
 #    - location: scripts/before_install.sh
   ApplicationStart:
