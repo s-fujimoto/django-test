@@ -13,6 +13,7 @@ deploy:
     secure: lVop57sHqh2tKd7HoEO7CCzprYKemjSJfqm76ED+RH/SZFbDsXwgv6lDejlpFrlinuRGIlvXOGW8SxDXA+mNIb4YJtpDV7Vla/be+WaRDAc7L2ozUyS5m5SKK0uTSoxKTmUB26ytYOtbg2H7ixS28nrXu01/PmDOvlz3zqiNerhhMwsObTf8pryZmdhrcDUruQY3vjo666PThYIq33YJeBXOg0QuyTFzlwJQ2IVnOiQON8Cyl0cFpUhSe+TUv1NO0N0DJULFnBl5a314XY9Om8oESZ9ujYrV85PpYGD0fHJukbRwSMQz7xAdRvNpT8sKBx7MYDy1Nr2d2RK2vhwIMC8O/8fCBxxKO0nOi5qV2enPTocfcJ2r8adlrEflfs+XbNifQmZGo/9tVTlgXB8J9F5pgxuV5pdgR6+FQeQJu4Wo5xxmH0x88+TggbwQ/FXUzGOT1SAJMn0A2Bbx7xkp1q+96b09NprAM/9Up2A75QVMC5g0W9lpHSNvNEifoVrMH+dfJdfCB3CB/9BVqRha5XmZTwi+VMziSWKQC0TawUKTISVr2OFEJhXecAV8+PWgV8d3Q/Q539iBD4LXVl4ofWNWfTeGLNVKgeW1p4QT7miMhx2EitQTGlEuTkbty7Nm+s+TeiTTnbarV5o4auYiEgDdN4P6eaQsXdoTSesK0x0=
   application: django-test-deploy
   deployment_group: deploy-test
+  region: ap-northeast-1
   on:
     repo: s-fujimoto/django-test
     branch: develop
